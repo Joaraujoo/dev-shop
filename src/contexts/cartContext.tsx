@@ -1,13 +1,13 @@
 import { createContext, useState, type ReactNode } from "react";
 import {type ProductProps } from "../pages/home";
 
+//Dados que estarão disponíveis no contexto
 interface CartContextData{
     cart: CartProps[];
     cartAmount: number;
     addItemCart: (newItem: ProductProps) => void;
     removeItemCart: (product: CartProps) => void;
     total: string;
-
 } 
 
 interface CartProps{
@@ -25,7 +25,7 @@ interface CartProviderProps{
     children: ReactNode;
 }
     
-
+//Contexto global para compartilhar os dados
 export const CartContext = createContext({} as CartContextData)
 
 function CartProvider({children}: CartProviderProps){
